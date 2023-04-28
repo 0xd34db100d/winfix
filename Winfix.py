@@ -89,7 +89,7 @@ try:
     if (sys.argv[1] == "list" or sys.argv[1] == "-l"):
         print(
             'List of available fixes:\n\n     + Internet fix ("Winfix.exe internet" or "Winfix.exe -i") - Use this for clear DNS Cache and renew IP, reset Winsock. [WARNING! YOU WILL SEE ALL COMMANDS OUTPUT, THERE CAN BE YOUR MAC ADDRESSES AND IP`s] \n\n     + Clipboard fix ("Winfix.exe clipboard" or "Winfix.exe -c") - Use this if you have broken clipboard.\n\n     + Explorer fix ("Winfix.exe explorer" or "Winfix.exe -e") - Use this if you have problems with desktop (restart explorer.exe).\n')
-        readkey()
+        exit()
     elif (sys.argv[1] == "internet" or sys.argv[1] == "-i"):
         print('Running internet fix...')
         internet()
