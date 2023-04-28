@@ -15,6 +15,7 @@ There's 2 ways how to install and use this script:
 * dependencies:
   * readchar (`pip install readchar`)
   * psutil (`pip install psutil`)
+  * customtkinter ('pip install customtkinter')
 ## Screenshots
- ![Screenshot of fixes list.](https://i.imgur.com/6PvzlMz.png)
+ ![Screenshot of fixes list.](https://i.imgur.com/3G5WfXe.png)
 ***made with <3***
