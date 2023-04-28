@@ -5,7 +5,12 @@ from ctypes import windll
 import psutil
 import customtkinter
 import tkinter
+from readchar import readkey
 windll.kernel32.SetConsoleTitleW("Winfix v1.1")
+
+def exit():
+    print("\nPress any key to exit...")
+    readkey()
 
 def internet():
     os.system("ipconfig /flushdns & ipconfig /release & ipconfig /renew & netsh winsock reset")
@@ -84,18 +89,22 @@ try:
     if (sys.argv[1] == "list" or sys.argv[1] == "-l"):
         print(
             'List of available fixes:\n\n     + Internet fix ("Winfix.exe internet" or "Winfix.exe -i") - Use this for clear DNS Cache and renew IP, reset Winsock. [WARNING! YOU WILL SEE ALL COMMANDS OUTPUT, THERE CAN BE YOUR MAC ADDRESSES AND IP`s] \n\n     + Clipboard fix ("Winfix.exe clipboard" or "Winfix.exe -c") - Use this if you have broken clipboard.\n\n     + Explorer fix ("Winfix.exe explorer" or "Winfix.exe -e") - Use this if you have problems with desktop (restart explorer.exe).\n')
+        readkey()
     elif (sys.argv[1] == "internet" or sys.argv[1] == "-i"):
         print('Running internet fix...')
         internet()
         print("\nInternet fix was applied successfully! I recommend restarting PC.")
+        exit()
     elif (sys.argv[1] == "clipboard" or sys.argv[1] == "-c"):
         print('Running clipboard fix...')
         clipboard()
         print("\nClipboard fix was applied successfully!")
+        exit()
     elif (sys.argv[1] == "explorer" or sys.argv[1] == "-e"):
         print('Running explorer fix...')
         explorer()
         print("\nExplorer fix was applied successfully!")
+        exit()
     else:
         print("Can't find arg. Running gui...")
         gui()
